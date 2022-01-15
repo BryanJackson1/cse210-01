@@ -1,7 +1,6 @@
 #Bryan Jackson's tic tac toe game
 #CS210 1-12-2021
 
-
 def main():
     game_board = [1,2,3,4,5,6,7,8,9] #initialize game board
     move_count = 0 #Initialize moves counter
@@ -41,56 +40,29 @@ def print_game_board(array_in): #Print game board
     print(f"{array_in[6]}|{array_in[7]}|{array_in[8]}")
     print()
 
-def detect_win(array_in):
-    if (array_in[0]=="X" and array_in[1]=="X" and array_in[2]=="X"):
-        print("X is the winner! Congratulations!")
-        win = True
-    elif (array_in[3]=="X" and array_in[4]=="X" and array_in[5]=="X"):
-        print("X is the winner! Congratulations!")
-        win = True
-    elif (array_in[6]=="X" and array_in[7]=="X" and array_in[8]=="X"):
-        print("X is the winner! Congratulations!")
-        win = True
-    elif (array_in[0]=="X" and array_in[3]=="X" and array_in[6]=="X"):
-        print("X is the winner! Congratulations!")
-        win = True
-    elif (array_in[1]=="X" and array_in[4]=="X" and array_in[7]=="X"):
-        print("X is the winner! Congratulations!")
-        win = True
-    elif (array_in[2]=="X" and array_in[5]=="X" and array_in[8]=="X"):
-        print("X is the winner! Congratulations!")
-        win = True
-    elif (array_in[0]=="X" and array_in[4]=="X" and array_in[8]=="X"):
-        print("X is the winner! Congratulations!")
-        win = True
-    elif (array_in[2]=="X" and array_in[4]=="X" and array_in[6]=="X"):
+def detect_win(array_in): 
+    if (array_in[0] == array_in[1] == array_in[2] == "X" or #horizontals
+        array_in[3] == array_in[4] == array_in[5] == "X" or
+        array_in[6] == array_in[7] == array_in[8] == "X" or 
+        array_in[0] == array_in[3] == array_in[6] == "X" or #verticals
+        array_in[1] == array_in[4] == array_in[7] == "X" or
+        array_in[2] == array_in[5] == array_in[8] == "X" or
+        array_in[0] == array_in[4] == array_in[8] == "X" or #diagonals
+        array_in[2] == array_in[4] == array_in[6] == "X" ):
         print("X is the winner! Congratulations!")
         win = True
 
-    elif (array_in[0]=="O" and array_in[1]=="O" and array_in[2]=="O"):
+    elif (array_in[0] == array_in[1] == array_in[2] == "O" or #horizontals
+        array_in[3] == array_in[4] == array_in[5] == "O" or
+        array_in[6] == array_in[7] == array_in[8] == "O" or
+        array_in[0] == array_in[3] == array_in[6] == "O" or #verticals
+        array_in[1] == array_in[4] == array_in[7] == "O" or
+        array_in[2] == array_in[5] == array_in[8] == "O" or
+        array_in[0] == array_in[4] == array_in[8] == "O" or #diagonals
+        array_in[2] == array_in[4] == array_in[6] == "O" ):
         print("O is the winner! Congratulations!")
         win = True
-    elif (array_in[3]=="O" and array_in[4]=="O" and array_in[5]=="O"):
-        print("O is the winner! Congratulations!")
-        win = True
-    elif (array_in[6]=="O" and array_in[7]=="O" and array_in[8]=="O"):
-        print("O is the winner! Congratulations!")
-        win = True
-    elif (array_in[0]=="O" and array_in[3]=="O" and array_in[6]=="O"):
-        print("O is the winner! Congratulations!")
-        win = True
-    elif (array_in[1]=="O" and array_in[4]=="O" and array_in[7]=="O"):
-        print("O is the winner! Congratulations!")
-        win = True
-    elif (array_in[2]=="O" and array_in[5]=="O" and array_in[8]=="O"):
-        print("O is the winner! Congratulations!")
-        win = True
-    elif (array_in[0]=="O" and array_in[4]=="O" and array_in[8]=="O"):
-        print("O is the winner! Congratulations!")
-        win = True
-    elif (array_in[2]=="O" and array_in[4]=="O" and array_in[6]=="O"):
-        print("O is the winner! Congratulations!")
-        win = True
+    
     else:
         win = False
 
